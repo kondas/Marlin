@@ -928,7 +928,7 @@
 //
 // Add the G35 command to read bed corners to help adjust screws. Requires a bed probe.
 //
-//#define ASSISTED_TRAMMING
+#define ASSISTED_TRAMMING
 #if ENABLED(ASSISTED_TRAMMING)
 
   // Define positions for probe points.
@@ -941,7 +941,7 @@
   #define TRAMMING_POINT_NAME_4 "Back-Left"
 
   #define RESTORE_LEVELING_AFTER_G35    // Enable to restore leveling setup after operation
-  //#define REPORT_TRAMMING_MM          // Report Z deviation (mm) for each point relative to the first
+  #define REPORT_TRAMMING_MM          // Report Z deviation (mm) for each point relative to the first
 
   //#define ASSISTED_TRAMMING_WIZARD    // Add a Tramming Wizard to the LCD menu
 
@@ -2854,12 +2854,12 @@
    * { <off_time[1..15]>, <hysteresis_end[-3..12]>, hysteresis_start[1..8] }
    */
   #define CHOPPER_TIMING CHOPPER_DEFAULT_24V        // All axes (override below)
-  #define CHOPPER_TIMING_X  CHOPPER_09STEP_24V        // For X Axes (override below)
+  //#define CHOPPER_TIMING_X  CHOPPER_09STEP_24V        // For X Axes (override below)
   //#define CHOPPER_TIMING_X2 CHOPPER_TIMING_X
-  #define CHOPPER_TIMING_Y  CHOPPER_09STEP_24V        // For Y Axes (override below)
+  //#define CHOPPER_TIMING_Y  CHOPPER_09STEP_24V        // For Y Axes (override below)
   //#define CHOPPER_TIMING_Y2 CHOPPER_TIMING_Y
-  //#define CHOPPER_TIMING_Z  CHOPPER_TIMING        // For Z Axes (override below)
-  //#define CHOPPER_TIMING_Z2 CHOPPER_TIMING_Z
+  #define CHOPPER_TIMING_Z  CHOPPER_09STEP_24V        // For Z Axes (override below)
+  #define CHOPPER_TIMING_Z2 CHOPPER_09STEP_24V
   //#define CHOPPER_TIMING_Z3 CHOPPER_TIMING_Z
   //#define CHOPPER_TIMING_Z4 CHOPPER_TIMING_Z
   //#define CHOPPER_TIMING_E  CHOPPER_TIMING        // For Extruders (override below)
@@ -2948,9 +2948,9 @@
 
   #if EITHER(SENSORLESS_HOMING, SENSORLESS_PROBING)
     // TMC2209: 0...255. TMC2130: -64...63
-    #define X_STALL_SENSITIVITY  -1
+    #define X_STALL_SENSITIVITY  2
     #define X2_STALL_SENSITIVITY X_STALL_SENSITIVITY
-    #define Y_STALL_SENSITIVITY  -1
+    #define Y_STALL_SENSITIVITY  2
     #define Y2_STALL_SENSITIVITY Y_STALL_SENSITIVITY
     //#define Z_STALL_SENSITIVITY  8
     //#define Z2_STALL_SENSITIVITY Z_STALL_SENSITIVITY

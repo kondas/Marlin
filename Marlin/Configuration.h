@@ -143,7 +143,7 @@
 #endif
 
 // Name displayed in the LCD "Ready" message and Info menu
-#define CUSTOM_MACHINE_NAME "MEGA"
+#define CUSTOM_MACHINE_NAME "SAPPHIRE"
 
 // Printer's unique ID, used by some programs to differentiate between machines.
 // Choose your own or use a service like https://www.uuidgenerator.net/version4
@@ -750,7 +750,7 @@
 
 // Enable one of the options below for CoreXY, CoreXZ, or CoreYZ kinematics,
 // either in the usual order or reversed
-//#define COREXY
+#define COREXY
 //#define COREXZ
 //#define COREYZ
 //#define COREYX
@@ -927,7 +927,7 @@
  * Override with M92
  *                                      X, Y, Z [, I [, J [, K]]], E0 [, E1[, E2...]]
  */
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 160, 160, 100, 410 }
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 100, 410 }
 
 /**
  * Default Max Feed Rate (mm/s)
@@ -1179,7 +1179,7 @@
  *     |    [-]    |
  *     O-- FRONT --+
  */
-#define NOZZLE_TO_PROBE_OFFSET { 29, -15, -1.9 }
+#define NOZZLE_TO_PROBE_OFFSET { 0, -15, -0 }
 
 // Most probes should stay away from the edges of the bed, but
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
@@ -1321,7 +1321,7 @@
 // @section machine
 
 // Invert the stepper direction. Change (or reverse the motor connector) if an axis goes the wrong way.
-#define INVERT_X_DIR true
+#define INVERT_X_DIR false
 #define INVERT_Y_DIR false
 #define INVERT_Z_DIR false
 //#define INVERT_I_DIR false
@@ -1368,17 +1368,17 @@
 
 // @section machine
 
-// The size of the printable area
-#define X_BED_SIZE 215
-#define Y_BED_SIZE 220
+// The size of the print bed
+#define X_BED_SIZE 307
+#define Y_BED_SIZE 300	
 
 // Travel limits (mm) after homing, corresponding to endstop positions.
-#define X_MIN_POS -11
+#define X_MIN_POS -3
 #define Y_MIN_POS 0
 #define Z_MIN_POS 0
-#define X_MAX_POS 235
-#define Y_MAX_POS 220
-#define Z_MAX_POS 205
+#define X_MAX_POS 310
+#define Y_MAX_POS Y_BED_SIZE
+#define Z_MAX_POS 320
 //#define I_MIN_POS 0
 //#define I_MAX_POS 50
 //#define J_MIN_POS 0
