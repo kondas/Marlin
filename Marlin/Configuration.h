@@ -778,13 +778,13 @@
 // Almost all printers will be using one per axis. Probes will use one or more of the
 // extra connectors. Leave undefined any used for non-endstop and non-probe purposes.
 #define USE_XMIN_PLUG
-//#define USE_YMIN_PLUG
+#define USE_YMIN_PLUG
 //#define USE_ZMIN_PLUG
 //#define USE_IMIN_PLUG
 //#define USE_JMIN_PLUG
 //#define USE_KMIN_PLUG
 //#define USE_XMAX_PLUG
-#define USE_YMAX_PLUG
+//#define USE_YMAX_PLUG
 //#define USE_ZMAX_PLUG
 //#define USE_IMAX_PLUG
 //#define USE_JMAX_PLUG
@@ -829,14 +829,14 @@
 #endif
 
 // Mechanical endstop with COM to ground and NC to Signal uses "false" here (most common setup).
-#define X_MIN_ENDSTOP_INVERTING true // Set to true to invert the logic of the endstop.
-#define Y_MIN_ENDSTOP_INVERTING true // Set to true to invert the logic of the endstop.
+#define X_MIN_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
+#define Y_MIN_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
 #define Z_MIN_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
 #define I_MIN_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
 #define J_MIN_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
 #define K_MIN_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
 #define X_MAX_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
-#define Y_MAX_ENDSTOP_INVERTING true // Set to true to invert the logic of the endstop.
+#define Y_MAX_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
 #define Z_MAX_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
 #define I_MAX_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
 #define J_MAX_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
@@ -1434,7 +1434,7 @@
  * RAMPS-based boards use SERVO3_PIN for the first runout sensor.
  * For other boards you may need to define FIL_RUNOUT_PIN, FIL_RUNOUT2_PIN, etc.
  */
-//#define FILAMENT_RUNOUT_SENSOR
+#define FILAMENT_RUNOUT_SENSOR
 #if ENABLED(FILAMENT_RUNOUT_SENSOR)
   #define FIL_RUNOUT_ENABLED_DEFAULT true // Enable the sensor on startup. Override with M412 followed by M500.
   #define NUM_RUNOUT_SENSORS   1          // Number of sensors, up to one per extruder. Define a FIL_RUNOUT#_PIN for each.
